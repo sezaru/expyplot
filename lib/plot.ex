@@ -874,6 +874,10 @@ defmodule Expyplot.Plot do
     Codebuilder.build_code(funcname: "plt.plot", nonnamed: opts, named: kwargs) |> Server.Commapi.add_code
   end
 
+  def candlestick(timestamp, open, high, low, close) do
+    Codebuilder.build_code(funcname: "candlestick", nonnamed: [List.zip([timestamp, open, high, low, close])], named: []) |> Server.Commapi.add_code
+  end
+
   @doc """
   A plot with data that contains dates.
   """

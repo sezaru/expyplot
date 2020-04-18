@@ -16,7 +16,12 @@ else:
     import matplotlib.pyplot as plt
     plt.switch_backend("GTK3Agg")
 
+from mplfinance.original_flavor import candlestick_ohlc
+
 signal = "$<>;;<>%"
+
+def candlestick(candles):
+    candlestick_ohlc(plt.axes(), candles)
 
 def accumulate(client):
     accumulated = ""
