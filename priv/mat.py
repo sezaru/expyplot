@@ -14,7 +14,7 @@ if "SSH_CONNECTION" in os.environ:
     import matplotlib.pyplot as plt
 else:
     import matplotlib.pyplot as plt
-    plt.switch_backend("Qt5Agg")
+    plt.switch_backend("GTK3Agg")
 
 signal = "$<>;;<>%"
 
